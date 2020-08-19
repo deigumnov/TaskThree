@@ -94,5 +94,17 @@ public class Main {
         System.out.println("charToInt('A') : " + charToInt('A'));
 //    12. Написать метод принимающий 1 параметр типа int и возвращающий его представление в виде печатного символа
         System.out.println("IntToChar(65) : " + IntToChar(65));
+
+        Cat catSimple = new Cat(0,0,0, "Чеширский кот");
+        Dog dogSimple = new Dog(0,0,0,"Овчарка");
+
+        catSimple.moveXYZ(4,5,6);
+        dogSimple.moveXYZ(1,2,3);
+
+        System.out.println(catSimple.getType() + " находится здесь " + catSimple.getXYZ());
+        System.out.println(dogSimple.getType() + " находится здесь " + dogSimple.getXYZ());
+
+        System.out.println("Кот говорит: " + catSimple.getMessage(0));
+        System.out.println("Пес говорит: " + dogSimple.getMessage(0));
     }
 }
