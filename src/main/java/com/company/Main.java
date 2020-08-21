@@ -101,8 +101,8 @@ public class Main {
         catSimple.setXYZ(4,5,6);
         dogSimple.setXYZ(1,2,3);
 
-        System.out.println(catSimple.getType() + " находится здесь " + catSimple.getXYZ());
-        System.out.println(dogSimple.getType() + " находится здесь " + dogSimple.getXYZ());
+        System.out.println(catSimple.getType() + catSimple.getXYZ());
+        System.out.println(dogSimple.getType() + dogSimple.getXYZ());
 
         System.out.println("Кот говорит: " + catSimple.getMessage(0));
         System.out.println("Пес говорит: " + dogSimple.getMessage(0));

@@ -18,7 +18,7 @@ public class Super {
 
 // немного уменьшает количество кода в основной программе
     public String getXYZ () {
-        String pos = "x = " + posX;
+        String pos = " находится здесь x = " + posX;
         pos += " y = " + posY;
         pos += " z = " + posZ;
         return pos;
