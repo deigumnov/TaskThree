@@ -1,41 +1,39 @@
 package com.company;
 
-import org.graalvm.compiler.api.replacements.Snippet;
-
 import java.util.LinkedList;
 
 public class Super {
 // координаты объекта X, Y, Z
-    private double posx, posy, posz;
+    private double posX, posY, posZ;
 // тип объекта (порода)
     private String type;
 // воспроизводимые звуки
-    private LinkedList<String> message = new LinkedList<>();
+    private final LinkedList<String> message = new LinkedList<>();
 
-    public void setXYZ(double posx, double posy, double posz) {
-        this.posx = posx;
-        this.posy = posy;
-        this.posz = posz;
+    public void setXYZ(double posX, double posY, double posZ) {
+        this.posX = posX;
+        this.posY = posY;
+        this.posZ = posZ;
     }
 
 // немного уменьшает количество кода в основной программе
     public String getXYZ () {
-        String pos = "x = " + posx;
-        pos += " y = " + posy;
-        pos += " z = " + posz;
+        String pos = "x = " + posX;
+        pos += " y = " + posY;
+        pos += " z = " + posZ;
         return pos;
     }
 
     public double getX () {
-        return posx;
+        return posX;
     }
 
     public double getY () {
-        return posy;
+        return posY;
     }
 
     public double getZ () {
-        return posz;
+        return posZ;
     }
 
 // устанавливает тип объекта (порода)

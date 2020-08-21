@@ -107,6 +107,7 @@ public class Main {
         System.out.println("Кот говорит: " + catSimple.getMessage(0));
         System.out.println("Пес говорит: " + dogSimple.getMessage(0));
 
-        System.out.println("Кот " + catSimple.setXYZ(5));
+        System.out.println("Кот " + catSimple.goOnTree(5));
+        System.out.println("Кот " + catSimple.jumpFromTree());
     }
 }
