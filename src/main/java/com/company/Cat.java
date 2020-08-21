@@ -1,6 +1,6 @@
 package com.company;
 
-public class Cat extends SuperClass {
+public class Cat extends Super {
     public Cat (double posx, double posy, double posz, String type) {
         setXYZ(posx,posy,posz);
         setType(type);

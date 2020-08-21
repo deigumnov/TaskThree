@@ -2,12 +2,12 @@ package com.company;
 
 import java.util.LinkedList;
 
-public class SuperClass {
+public class Super {
 // позиция объекта
     private double posx, posy, posz;
 // тип объекта
     private String type;
-    private LinkedList<String> message = new LinkedList<String>();
+    private LinkedList<String> message = new LinkedList<>();
     public void setXYZ(double posx, double posy, double posz) {
         this.posx = posx;
         this.posy = posy;
@@ -38,7 +38,8 @@ public class SuperClass {
     public String getType () {return this.type; }
 
     public void setMessage (String ... message) {
-        for (int i = 0;i < message.length; ++i) this.message.add(message[i]);
+        int thisMessageSize = this.message.size();
+        for (int i = thisMessageSize;i < message.length+thisMessageSize; ++i) this.message.add(message[i]);
     }
 
     public int getMessageCount () {
