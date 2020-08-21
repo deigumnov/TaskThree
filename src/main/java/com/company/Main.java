@@ -98,13 +98,15 @@ public class Main {
         Cat catSimple = new Cat(0,0,0, "Чеширский кот");
         Dog dogSimple = new Dog(0,0,0,"Овчарка");
 
-        catSimple.moveXYZ(4,5,6);
-        dogSimple.moveXYZ(1,2,3);
+        catSimple.setXYZ(4,5,6);
+        dogSimple.setXYZ(1,2,3);
 
         System.out.println(catSimple.getType() + " находится здесь " + catSimple.getXYZ());
         System.out.println(dogSimple.getType() + " находится здесь " + dogSimple.getXYZ());
 
         System.out.println("Кот говорит: " + catSimple.getMessage(0));
         System.out.println("Пес говорит: " + dogSimple.getMessage(0));
+
+        System.out.println("Кот " + catSimple.setXYZ(5));
     }
 }

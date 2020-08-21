@@ -1,6 +1,6 @@
 package com.company;
 
-public class Object {
+public class SuperClass {
 // позиция объекта
     private double posx, posy, posz;
 // тип объекта
@@ -10,7 +10,7 @@ public class Object {
 // текущее количество сообщений
     private int messageCount;
 
-    public void moveXYZ (double posx, double posy, double posz) {
+    public void setXYZ(double posx, double posy, double posz) {
         this.posx = posx;
         this.posy = posy;
         this.posz = posz;
@@ -21,6 +21,18 @@ public class Object {
         pos += " y = " + posy;
         pos += " z = " + posz;
         return pos;
+    }
+
+    public double getX () {
+        return posx;
+    }
+
+    public double getY () {
+        return posy;
+    }
+
+    public double getZ () {
+        return posz;
     }
 
     public void setType (String type) { this.type = type; }
