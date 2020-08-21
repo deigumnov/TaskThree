@@ -1,15 +1,15 @@
 //2. Создать новый проект приложения аналогичный тому, который мы с вами создавали.
 package com.company;
 
+import java.util.LinkedList;
+
 //3. Создать в этом проекте класс с методом main аналогичный тому который мы с вами создавали.
 public class Main {
 
 //    4. Написать публичный метод принимающий 2 параметра: первый типа byte и второй типа short.
 //    Метод должен возвращать сумму значений параметров.
 //    Тип возвращаемого значения должен быть byte.
-    public static byte addByteShort (byte a, short b) {
-        return (byte)(a+b);
-    }
+    public static byte addByteShort (byte a, short b) { return (byte)(a+b); }
 
 //    5. Написать публичный метод принимающий 2 параметра: первый типа int и второй типа long.
 //    Метод должен возвращать произведение значений параметров.
@@ -21,9 +21,7 @@ public class Main {
 //    6. Написать метод getMaxNumber принимающий 2 параметра: int и int.
 //    Метод должен сравнить переданные параметры между собой и вернуть максимальный.
 //    Для решения необходимо использовать IF или тернарный оператор ?:
-    public static int getMaxNumber (int a, int b) {
-        return a > b ? a : b;
-    }
+    public static int getMaxNumber (int a, int b) { return a > b ? a : b; }
 
 //    7. Написать метод isCharA принимающий 1 параметр типа char.
 //    Если передана буква 'А', то возвращать true, а в остальных случаях false
@@ -95,11 +93,40 @@ public class Main {
 //    12. Написать метод принимающий 1 параметр типа int и возвращающий его представление в виде печатного символа
         System.out.println("IntToChar(65) : " + IntToChar(65));
 
-        Cat catSimple = new Cat(0,0,0, "Чеширский кот");
-        Dog dogSimple = new Dog(0,0,0,"Овчарка");
+        LinkedList<Super> animals = new LinkedList<>();
 
-        catSimple.setXYZ(4,5,6);
-        dogSimple.setXYZ(1,2,3);
+        animals.add(new Cat("Чеширский кот"));
+        animals.add(new Dog("Овчарка"));
+
+        for (Super animal : animals) {
+            // все научились рычать
+            animal.setMessage("РРР");
+            if (animal instanceof Cat) {
+                // коты ушли на север
+                animal.setXYZ(0, 999, 0);
+            } else if (animal instanceof Dog) {
+                // собаки ушли на восток
+                animal.setXYZ(999, 0, 0);
+            } else {
+                // неописанный класс улетел
+                animal.setXYZ(0, 0, 999);
+            }
+            for (int j = 0; j < animal.getMessageCount(); j++) {
+                if (animal instanceof Cat) {
+                    System.out.println("Кот говорит: " + animal.getMessage(j));
+                } else if (animal instanceof Dog) {
+                    System.out.println("Пес говорит: " + animal.getMessage(j));
+                } else {
+                    System.out.println("НЛО говорит: " + animal.getMessage(j));
+                }
+            }
+        }
+
+        Cat catSimple = new Cat( "Чеширский кот");
+        Dog dogSimple = new Dog("Овчарка");
+
+        catSimple.setXYZ(4,5,0);
+        dogSimple.setXYZ(1,2,0);
 
         System.out.println(catSimple.getType() + catSimple.getXYZ());
         System.out.println(dogSimple.getType() + dogSimple.getXYZ());

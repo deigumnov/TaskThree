@@ -4,16 +4,15 @@ public class Cat extends Super {
     private double treeHeight;
     private boolean isOnTree;
 
-    public Cat (double posX, double posY, double posZ, String type) {
-        setXYZ(posX, posY, posZ);
-        setType(type);
-        setMessage("МЯУ", "РРР");
-        this.isOnTree = false;
 // не предусмотрено создавать котов на деревьях
+    public Cat(String type) {
+        super(type);
+        setMessage("МЯУ");
+        this.isOnTree = false;
         this.treeHeight = 0;
     }
 
-// кот запрыгивает с земли на дерево высотой height
+    // кот запрыгивает с земли на дерево высотой height
     public String goOnTree(double height) {
         super.setXYZ(super.getX(), super.getY(), super.getZ()+height);
         this.isOnTree = true;
