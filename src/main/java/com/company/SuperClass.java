@@ -1,15 +1,13 @@
 package com.company;
 
+import java.util.LinkedList;
+
 public class SuperClass {
 // позиция объекта
     private double posx, posy, posz;
 // тип объекта
     private String type;
-//  максимальное количество сообщений задано статично 100 штук
-    private String [] message = new String[100];
-// текущее количество сообщений
-    private int messageCount;
-
+    private LinkedList<String> message = new LinkedList<String>();
     public void setXYZ(double posx, double posy, double posz) {
         this.posx = posx;
         this.posy = posy;
@@ -39,23 +37,17 @@ public class SuperClass {
 
     public String getType () {return this.type; }
 
-    public boolean setMessage (String ... message) {
-        boolean check = true;
-        if (message.length > this.message.length) check = false;
-        else {
-            messageCount = message.length;
-            for (int i = 0;i < messageCount; ++i) this.message[i] = message[i];
-        }
-        return check;
+    public void setMessage (String ... message) {
+        for (int i = 0;i < message.length; ++i) this.message.add(message[i]);
     }
 
     public int getMessageCount () {
-        return messageCount;
+        return this.message.size();
     }
 
     public String getMessage (int messageNumber) {
-        if ((messageNumber >= 0) && (messageNumber < messageCount)) {
-            return message[messageNumber];
+        if ((messageNumber >= 0) && (messageNumber < this.message.size())) {
+            return message.get(messageNumber);
         } else {
             return "Сообщение не задано";
         }
