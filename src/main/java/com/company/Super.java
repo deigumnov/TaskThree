@@ -1,7 +1,6 @@
 package com.company;
 
-import java.util.Collections;
-import java.util.LinkedList;
+import java.util.*;
 
 public class Super {
 // координаты объекта X, Y, Z
@@ -9,7 +8,7 @@ public class Super {
 // тип объекта (порода)
     private String type;
 // воспроизводимые звуки
-    private final LinkedList<String> message = new LinkedList<>();
+    private final List<String> message = new ArrayList<>();
 // создает объект в начале координат с описанием
     Super (String type) {
         setXYZ(0,0,0);

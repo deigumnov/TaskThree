@@ -12,15 +12,15 @@ public class Cat extends Super {
         this.treeHeight = 0;
     }
 
-    // кот запрыгивает с земли на дерево высотой height
-    public String goOnTree(double height) {
+// кот залазиет с земли на дерево высотой height
+    public String jumpOnTree(double height) {
         super.setXYZ(super.getX(), super.getY(), super.getZ()+height);
         this.isOnTree = true;
         this.treeHeight = height;
         return "залез на дерево высотой " + height;
     }
 
-// кот спрыгивает с дерева высотой height на землю
+// кот слезает с дерева высотой height на землю
     public String jumpFromTree () {
         String result;
         if (this.isOnTree) {
