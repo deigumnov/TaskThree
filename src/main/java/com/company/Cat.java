@@ -1,6 +1,6 @@
 package com.company;
 
-public class Cat extends Super implements Swim {
+public class Cat extends Super implements Swim, MakeSound {
     private double treeHeight;
     private boolean isOnTree;
 
@@ -34,7 +34,14 @@ public class Cat extends Super implements Swim {
         return result;
     }
 
-    public String swim() {
-        return null;
+    @Override
+    public String swim() { /*  тут могла быть реализация плавания */ return "Умеет плавать"; }
+
+    @Override
+    public String makeSound() {
+        if (super.getMessageCount() > 0)
+            return super.getMessage(0);
+        else
+            return "";
     }
 }

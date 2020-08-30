@@ -48,5 +48,8 @@ public class Main {
 
         System.out.println("Кот " + catSimple.jumpOnTree(5));
         System.out.println("Кот " + catSimple.jumpFromTree());
+
+        System.out.println(catSimple.makeSound());
+        System.out.println(dogSimple.makeSound());
     }
 }
